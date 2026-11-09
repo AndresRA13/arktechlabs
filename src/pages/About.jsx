@@ -3,38 +3,75 @@ import { motion } from 'framer-motion';
 import {
   Rocket, Users, ArrowRight, Star, Globe, Sparkles,
   ShieldCheck, CheckCircle2, HeartHandshake, Compass,
-  Laptop, Code2, MessageSquare, Award
+  Laptop, Code2, MessageSquare, Award, Smartphone,
+  Database, Layers, Check, Cpu
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
-const teamMembers = [
+const coreTeamRoles = [
   {
-    name: 'Carlos Méndez',
-    role: 'CEO & Arquitecto de Software',
-    img: 'https://i.pravatar.cc/200?u=carlos',
-    desc: 'Liderazgo técnico y visión estratégica para transformar modelos de negocio con tecnología moderna.',
-    badge: 'Liderazgo',
-    badgeColor: 'bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20',
+    role: 'Arquitectura & Backend Lead',
+    num: '01',
+    desc: 'Diseño de bases de datos de alta concurrencia, APIs REST y microservicios seguros en la nube.',
+    skills: ['Node.js', 'PostgreSQL', 'APIs REST', 'Seguridad'],
     gradient: 'from-violet-600 to-purple-600',
+    shadow: 'shadow-violet-500/20',
+    icon: Database,
   },
   {
-    name: 'Andrés Rojas',
-    role: 'CTO & Lead Developer',
-    img: 'https://i.pravatar.cc/200?u=andres',
-    desc: 'Especialista en arquitecturas full-stack escalables, aplicaciones móviles y soluciones cloud de alto rendimiento.',
-    badge: 'Full Stack & Cloud',
-    badgeColor: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
+    role: 'Desarrollo Frontend & Web Apps',
+    num: '02',
+    desc: 'Construcción de interfaces reactivas, Core Web Vitals 95+ y aplicaciones modernas con React y Next.js.',
+    skills: ['React 19', 'Next.js', 'Tailwind CSS', 'Vite'],
     gradient: 'from-cyan-500 to-blue-600',
+    shadow: 'shadow-cyan-500/20',
+    icon: Code2,
   },
   {
-    name: 'Juan Pérez',
-    role: 'Lead Designer UI/UX',
-    img: 'https://i.pravatar.cc/200?u=juan',
-    desc: 'Apasionado por crear experiencias digitales intuitivas y elegantes que enamoran al usuario y elevan conversiones.',
-    badge: 'UX Design & Prototipado',
-    badgeColor: 'bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20',
+    role: 'Diseño UI/UX & Producto Digital',
+    num: '03',
+    desc: 'Conceptualización de wireframes interactivos, design systems, prototipado en Figma y flujos de alta conversión.',
+    skills: ['Figma Pro', 'Design Systems', 'UX Research', 'Prototipos'],
     gradient: 'from-pink-500 to-rose-500',
+    shadow: 'shadow-pink-500/20',
+    icon: Sparkles,
+  },
+  {
+    role: 'Ingeniería Móvil & PWA',
+    num: '04',
+    desc: 'Desarrollo de aplicaciones nativas y multiplataforma con soporte offline y notificaciones para iOS y Android.',
+    skills: ['Flutter', 'React Native', 'PWA ServiceWorker', 'Android/iOS'],
+    gradient: 'from-emerald-500 to-teal-500',
+    shadow: 'shadow-emerald-500/20',
+    icon: Smartphone,
+  },
+  {
+    role: 'Infraestructura Cloud & DevOps',
+    num: '05',
+    desc: 'Automatización de pipelines CI/CD, despliegues continuos, contenedores Docker y servidores cloud seguros.',
+    skills: ['AWS Cloud', 'Docker', 'CI/CD Pipelines', 'Linux & SSL'],
+    gradient: 'from-amber-500 to-orange-500',
+    shadow: 'shadow-amber-500/20',
+    icon: Cpu,
+  },
+  {
+    role: 'Aseguramiento de Calidad & QA',
+    num: '06',
+    desc: 'Pruebas automatizadas, auditorías de seguridad, pruebas de carga y verificación exhaustiva previa al lanzamiento.',
+    skills: ['Testing E2E', 'Unit Tests', 'Auditoría Código', 'Bug Tracking'],
+    gradient: 'from-indigo-500 to-blue-600',
+    shadow: 'shadow-indigo-500/20',
+    icon: ShieldCheck,
+  },
+  {
+    role: 'Gestión Técnica & Soporte Continuo',
+    num: '07',
+    desc: 'Coordinación ágil por sprints, atención directa y cercana al cliente, capacitación y monitoreo post-lanzamiento.',
+    skills: ['Scrum / Sprints', 'Soporte 24/7', 'Capacitación', 'Atención Directa'],
+    gradient: 'from-violet-600 to-cyan-500',
+    shadow: 'shadow-violet-500/20',
+    icon: HeartHandshake,
   },
 ];
 
@@ -122,12 +159,10 @@ const About = () => {
               {/* Overlay info */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="flex items-center gap-3">
-                  <div className="flex -space-x-2">
-                    {teamMembers.map((m, i) => (
-                      <img key={i} src={m.img} alt={m.name} className="w-8 h-8 rounded-full ring-2 ring-violet-400/50 object-cover" />
-                    ))}
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-violet-600/90 text-white font-mono font-bold text-xs ring-2 ring-violet-400/50 shadow-md">
+                    7
                   </div>
-                  <p className="text-white text-xs font-semibold">Equipo ArkTech · Talento Multidisciplinar</p>
+                  <p className="text-white text-xs font-semibold">7 Especialistas a Cargo · Talento Multidisciplinar</p>
                 </div>
               </div>
             </div>
@@ -229,7 +264,7 @@ const About = () => {
               </p>
 
               <p>
-                La confianza depositada por nuestros clientes y cada proyecto entregado con éxito han permitido un crecimiento sólido y constante en <strong>ArkTech Labs</strong>. Hoy en día, nuestro equipo aporta todo su talento a través de departamentos especializados:
+                La confianza depositada por nuestros clientes y cada proyecto entregado con éxito han consolidado a <strong>ArkTech Labs</strong> como una firma tecnológica ágil y de alto rendimiento. En la actualidad, <strong>7 personas especializadas estamos a cargo</strong> y trabajamos directamente en cada proyecto, conformando un equipo multidisciplinario distribuido en las áreas clave:
               </p>
 
               {/* Department chips */}
@@ -324,54 +359,88 @@ const About = () => {
           </div>
         </div>
 
-        {/* ─── TEAM ───────────────────────────────────────── */}
+        {/* ─── EQUIPO (7 ESPECIALISTAS A CARGO) ─────────── */}
         <div className="space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-4">
+          <div className="text-center max-w-3xl mx-auto space-y-4">
             <span className="px-4 py-1.5 rounded-full bg-violet-500/8 text-violet-600 dark:text-violet-400 text-xs font-bold font-mono tracking-wider uppercase border border-violet-500/20 inline-block">
-              Liderazgo & Equipo
+              Equipo Núcleo · 7 Especialistas a Cargo
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
-              Las mentes detrás de{' '}
-              <span className="text-gradient-primary">ArkTech Labs</span>
+              7 profesionales dedicados a{' '}
+              <span className="text-gradient-primary">tu producto digital</span>
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
-              Un equipo apasionado por la ingeniería de software, la estética visual y la satisfacción de nuestros clientes.
+            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg">
+              No tercerizamos ni delegamos tu proyecto a intermediarios. Nuestro núcleo de 7 especialistas cubre cada fase de ingeniería, diseño, calidad y soporte de principio a fin.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {teamMembers.map((member, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {coreTeamRoles.map((member, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                whileHover={{ y: -8 }}
-                className="p-8 rounded-3xl glass-card glass-card-hover border border-violet-100/80 dark:border-violet-500/12 text-center space-y-5 card-shimmer group"
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                whileHover={{ y: -6 }}
+                className="p-6 rounded-3xl glass-card border border-violet-100/80 dark:border-violet-500/12 space-y-4 card-shimmer flex flex-col justify-between"
               >
-                <div className="relative inline-block">
-                  <div className="w-24 h-24 rounded-2xl overflow-hidden mx-auto ring-4 ring-violet-500/20 group-hover:ring-violet-500/40 transition-all duration-300">
-                    <img
-                      src={member.img}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${member.gradient} flex items-center justify-center text-white shadow-md ${member.shadow}`}>
+                      <member.icon size={22} />
+                    </div>
+                    <span className="text-xs font-mono font-bold text-violet-600 dark:text-violet-400 px-2.5 py-1 rounded-full bg-violet-500/10 border border-violet-500/20">
+                      {member.num}
+                    </span>
                   </div>
-                  <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full border-2 border-white dark:border-[#030712] flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full" />
+
+                  <div>
+                    <h3 className="font-extrabold text-lg text-gray-900 dark:text-white leading-tight">
+                      {member.role}
+                    </h3>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {member.desc}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-violet-100/60 dark:border-violet-500/10">
+                  <div className="flex flex-wrap gap-1.5">
+                    {member.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2 py-0.5 rounded-md bg-gray-100 dark:bg-white/[0.05] text-[10px] font-medium text-gray-700 dark:text-gray-300 border border-gray-200/60 dark:border-white/[0.06]"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">{member.name}</h3>
-                  <p className="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wide mt-1">{member.role}</p>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{member.desc}</p>
-                <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border ${member.badgeColor}`}>
-                  {member.badge}
-                </span>
               </motion.div>
             ))}
+          </div>
+
+          {/* Core team benefit banner */}
+          <div className="p-6 sm:p-8 rounded-2xl glass-card border border-violet-500/25 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div className="space-y-1 max-w-xl">
+              <span className="text-[11px] font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest block">
+                ● Estructura Boutique & Ágil
+              </span>
+              <h4 className="text-lg font-extrabold text-gray-900 dark:text-white">
+                0 Intermediarios · 100% Comunicación Directa con los Desarrolladores
+              </h4>
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                Al trabajar con un equipo central de 7 personas a cargo, hablas directamente con los ingenieros que construyen tu solución, garantizando rapidez, confidencialidad y control absoluto.
+              </p>
+            </div>
+            <Link
+              to="/contact"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-bold text-xs sm:text-sm shadow-md hover:scale-105 transition-all flex-shrink-0"
+            >
+              Hablar con el Equipo →
+            </Link>
           </div>
         </div>
 

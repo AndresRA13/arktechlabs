@@ -245,11 +245,36 @@ const homeFaqs = [
   },
 ];
 
-// Miembros de equipo sincronizados con /about
-const teamPreview = [
-  { name: 'Carlos Méndez', role: 'CEO & Arquitecto de Software', img: 'https://i.pravatar.cc/200?u=carlos', badge: 'Liderazgo' },
-  { name: 'Andrés Rojas', role: 'CTO & Lead Developer', img: 'https://i.pravatar.cc/200?u=andres', badge: 'Full Stack & Cloud' },
-  { name: 'Juan Pérez', role: 'Lead Designer UI/UX', img: 'https://i.pravatar.cc/200?u=juan', badge: 'UX & Conversión' },
+// Equipo central de 7 especialistas sincronizado con /about
+const coreTeamPreview = [
+  {
+    role: 'Arquitectura & Backend',
+    desc: 'Bases de datos, APIs seguras y lógica empresarial',
+    tag: '2 Especialistas',
+    icon: Database,
+    color: 'from-violet-600 to-purple-600',
+  },
+  {
+    role: 'Frontend & UI/UX',
+    desc: 'Interfaces reactivas de alta conversión y prototipado',
+    tag: '2 Especialistas',
+    icon: Code2,
+    color: 'from-cyan-500 to-blue-600',
+  },
+  {
+    role: 'Móvil, PWA & Cloud',
+    desc: 'Apps para iOS/Android y despliegues en la nube',
+    tag: '2 Especialistas',
+    icon: Smartphone,
+    color: 'from-emerald-500 to-teal-500',
+  },
+  {
+    role: 'QA & Soporte Continuo',
+    desc: 'Auditorías de calidad y monitoreo 24/7 post-entrega',
+    tag: '1 Especialista',
+    icon: ShieldCheck,
+    color: 'from-amber-500 to-orange-500',
+  },
 ];
 
 const Home = () => {
@@ -861,38 +886,47 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Team preview cards */}
+            {/* Team preview cards (7 Especialistas a Cargo) */}
             <div className="lg:col-span-5 space-y-4">
-              <p className="text-xs font-mono font-bold text-violet-500 dark:text-violet-400 uppercase tracking-widest">
-                // Liderazgo Técnico
-              </p>
+              <div className="flex items-center justify-between">
+                <p className="text-xs font-mono font-bold text-violet-500 dark:text-violet-400 uppercase tracking-widest">
+                  // Equipo Central a Cargo
+                </p>
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold border border-emerald-500/20">
+                  ● 7 Especialistas
+                </span>
+              </div>
+
               <div className="space-y-3">
-                {teamPreview.map((member, i) => (
+                {coreTeamPreview.map((area, i) => (
                   <motion.div
                     key={i}
                     whileHover={{ x: 6 }}
-                    className="p-4 rounded-2xl glass-card border border-violet-100/80 dark:border-violet-500/15 flex items-center justify-between gap-4"
+                    className="p-3.5 rounded-2xl glass-card border border-violet-100/80 dark:border-violet-500/15 flex items-center justify-between gap-4 transition-all"
                   >
                     <div className="flex items-center gap-3">
-                      <img
-                        src={member.img}
-                        alt={member.name}
-                        className="w-12 h-12 rounded-xl object-cover ring-2 ring-violet-500/30"
-                      />
+                      <div className={`w-10 h-10 rounded-xl bg-gradient-to-tr ${area.color} flex items-center justify-center text-white shadow-md flex-shrink-0`}>
+                        <area.icon size={18} />
+                      </div>
                       <div>
-                        <h4 className="font-bold text-sm text-gray-900 dark:text-white">{member.name}</h4>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">{member.role}</p>
+                        <h4 className="font-bold text-sm text-gray-900 dark:text-white leading-tight">{area.role}</h4>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-1">{area.desc}</p>
                       </div>
                     </div>
-                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/20">
-                      {member.badge}
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/20 flex-shrink-0">
+                      {area.tag}
                     </span>
                   </motion.div>
                 ))}
               </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left pt-2">
-                Con presencia física y remota en México y España. Coordinamos en múltiples zonas horarias.
-              </p>
+
+              <div className="p-3 rounded-xl bg-violet-500/5 border border-violet-500/15 flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
+                <span className="font-semibold text-gray-800 dark:text-gray-200">0 Intermediarios</span>
+                <span>•</span>
+                <span>Trato directo con los ingenieros</span>
+                <span>•</span>
+                <span className="font-semibold text-violet-600 dark:text-violet-400">7 a cargo</span>
+              </div>
             </div>
           </div>
         </div>

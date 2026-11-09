@@ -285,8 +285,9 @@ const Contact = () => {
                         <option value="">Selecciona un tipo de proyecto</option>
                         <option>Landing Page</option>
                         <option>Sitio Web Corporativo</option>
+                        <option>Software a Medida & ERP</option>
                         <option>Plataforma Web / SaaS</option>
-                        <option>Aplicación Móvil</option>
+                        <option>Aplicación Móvil / PWA</option>
                         <option>E-Commerce</option>
                         <option>Automatización / IA</option>
                         <option>Otro</option>
